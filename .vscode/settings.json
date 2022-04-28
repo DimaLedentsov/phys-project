@@ -1,0 +1,20 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar"
+        ],
+        "exclude": [
+            "lib/xchart-3.8.1.jar",
+            "lib/javaFX/javafx.web.jar",
+            "lib/javaFX/javafx.swing.jar",
+            "lib/javaFX/javafx.media.jar",
+            "lib/javaFX/javafx.graphics.jar",
+            "lib/javaFX/javafx.fxml.jar",
+            "lib/javaFX/javafx.controls.jar",
+            "lib/javaFX/javafx.base.jar",
+            "lib/javaFX/javafx-swt.jar",
+            "lib/jmetro-11.6.15.jar"
+        ]
+    },
+    "java.project.outputPath": "bin"
+}

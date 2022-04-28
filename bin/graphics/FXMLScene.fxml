@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="splitPane" dividerPositions="0.3493543758967001" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphics.FXMLSceneController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="254.0">
+         <children>
+            <BorderPane prefHeight="530.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <bottom>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <items>
+                        <Button fx:id="begin" mnemonicParsing="false" onAction="#begin" prefHeight="42.0" prefWidth="117.0" text="начать">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="stopContinue" mnemonicParsing="false" onAction="#stopOrContinue" prefHeight="42.0" prefWidth="134.0" text="стоп">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </bottom>
+               <center>
+                  <TabPane fx:id="tabPane" prefHeight="493.0" prefWidth="218.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <VBox prefHeight="42.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="опции">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#saveAs" text="сохранить как" />
+                              <MenuItem fx:id="about" mnemonicParsing="false" onAction="#about" text="о нас" />
+                           </items>
+                        </MenuButton>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                          <items>
+                            <Button fx:id="add" mnemonicParsing="false" onAction="#addTab" text="добавить" />
+                              <Button fx:id="remove" mnemonicParsing="false" onAction="#removeTab" text="удалить" />
+                          </items>
+                        </ToolBar>
+                     </children>
+                  </VBox>
+               </top>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <LineChart id="chart" fx:id="chart" alternativeColumnFillVisible="true" prefHeight="398.0" prefWidth="441.0" stylesheets="@chart.css">
+                    <xAxis>
+                      <NumberAxis autoRanging="false" label="t, c" prefHeight="43.0" prefWidth="266.0" side="BOTTOM" tickUnit="0.1" upperBound="1.0" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis autoRanging="true" label="x, м" prefHeight="458.0" prefWidth="51.0" side="LEFT" tickUnit="0.1" upperBound="1.0" />
+                    </yAxis>
+                  </LineChart>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
