@@ -33,7 +33,7 @@ public class AnimTask extends Thread{
                             if(!axis.isAutoRanging() && axis.getUpperBound()<point.x){
                                 axis.setUpperBound(point.x+10);
                             }
-                            if(isRunning()) chart.getData().get(j).getData().add(new XYChart.Data<>(point.x, point.y));
+                            if(isRunning())chart.getData().get(j).getData().add(new XYChart.Data<>(point.x, point.y));
                         });
                 }
             } catch (InterruptedException e) {

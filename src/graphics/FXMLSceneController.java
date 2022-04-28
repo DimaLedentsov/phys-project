@@ -151,23 +151,23 @@ public class FXMLSceneController {
         Tab newTab = new Tab();
 
         Label resistanceText = new Label("сопротивление среды (Н*с/м):");
-        resistance = new TextField("1");
+        TextField resistance = new TextField("1");
         resistance.setId("resistance");
 
         Label angleText = new Label("начальный угол (град):");
-        angle = new TextField("90");
+        TextField angle = new TextField("90");
         angle.setId("angle");
 
         Label lengthText = new Label("длина (м):");
-        length = new TextField("10");
+        TextField length = new TextField("10");
         length.setId("length");
 
         Label massText = new Label("масса (кг):");
-        mass = new TextField("5");
+        TextField mass = new TextField("5");
         mass.setId("mass");
 
 
-        isSpringBox = new CheckBox("пружинный маятник");
+        CheckBox isSpringBox = new CheckBox("пружинный маятник");
         isSpringBox.setId("checkbox");
         
 
@@ -177,16 +177,12 @@ public class FXMLSceneController {
 
 
         newTab.setText("график " + Integer.toString(tabPane.getTabs().size()+1));
-
+/*
         newTab.setOnSelectionChanged((e)->{
             if(newTab.isSelected()){
-                VBox content  = (VBox)newTab.getContent();
-                resistance = (TextField)content.lookup("#resistance");
-                angle = (TextField)content.lookup("#angle");
-                length = (TextField)content.lookup("#length");
-                mass = (TextField)content.lookup("#mass");
+                getDataFromTab(newTab);
             }
-        });
+        });*/
 
         isSpringBox.setOnAction((e)->{
             if(isSpringBox.isSelected()){
@@ -194,11 +190,11 @@ public class FXMLSceneController {
             
                 
                 Label rigidityText = new Label("коэффициент жесткости (Н/м):");
-                rigity = new TextField("1");
+                TextField rigity = new TextField("1");
                 rigity.setId("rigity"); 
                 
                 Label startXText = new Label("начальная координата (м):");
-                startX = new TextField("1");
+                TextField startX = new TextField("1");
                 startX.setId("startX"); 
                 
                 vbox.getChildren().addAll(resistanceText, resistance, rigidityText, rigity, startXText, startX, massText, mass, isSpringBox);
@@ -502,11 +498,17 @@ public class FXMLSceneController {
 
     void getDataFromTab(Tab tab){
         VBox content  = (VBox)tab.getContent();
-        resistance = (TextField)content.lookup("#resistance");
-        angle = (TextField)content.lookup("#angle");
-        length = (TextField)content.lookup("#length");
-        mass = (TextField)content.lookup("#mass");
         isSpringBox = (CheckBox)content.lookup("#checkbox");
+        resistance = (TextField)content.lookup("#resistance");
+        mass = (TextField)content.lookup("#mass");
+        if(!isSpringBox.isSelected()){
+            angle = (TextField)content.lookup("#angle");
+            length = (TextField)content.lookup("#length");
+        } else{
+            rigity = (TextField)content.lookup("#rigity");
+            startX = (TextField)content.lookup("#startX");
+        }
+        
     }
 
     public void stopOrContinue(){

@@ -28,7 +28,7 @@ public class SpringFunction implements Function,Plottable{
         v = (x-p_x)/d_t;
         p_x=x;
         p_v = v;
-        x+= m*g/k;
+        x+= m*g/k+x_0;
         return x;
     }
 

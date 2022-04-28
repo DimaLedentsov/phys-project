@@ -23,5 +23,6 @@ public class Simulator{
 
     public void setStep(double s){
         step = s;
+        time-=step;
     }
 }
