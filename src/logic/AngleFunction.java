@@ -5,7 +5,7 @@ public class AngleFunction implements Function{
     public final double alpha_0;
     public final double l;
     public final double m;
-    public final double g = 9.8;
+    public final double g = 10;
     public double alpha;
     public double p_alpha;
     public double v;

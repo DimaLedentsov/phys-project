@@ -554,7 +554,7 @@ public class FXMLSceneController {
 
                     if(b>3 || b<0) throw new InvalidNumberException("сопротивление среды должно быть от 0 до 3");
                     
-                    if(x_0<=0 || x_0>30) throw new InvalidNumberException("начальная координата должна быть от 0 до 10");
+                    if(x_0<=-20 || x_0>20) throw new InvalidNumberException("начальная координата должна быть от -20 до 20");
                     if(m<=0 || m>20) throw new InvalidNumberException("масса должа быть от 0 до 20");
                     if(k<=0 || k>100) throw new InvalidNumberException("коэффициент жесткости должен быть от 0 до 10");
                     Plottable x = new SpringFunction(b, x_0, k, m, dt);

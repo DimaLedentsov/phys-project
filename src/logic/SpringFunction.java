@@ -5,7 +5,7 @@ public class SpringFunction implements Function,Plottable{
     public final double b;
 
     public final double m;
-    public final double g = 9.8;
+    public final double g = 10;
     public final double x_0;
     public double v;
     public double p_v;
@@ -28,7 +28,7 @@ public class SpringFunction implements Function,Plottable{
         v = (x-p_x)/d_t;
         p_x=x;
         p_v = v;
-        x+= m*g/k+x_0;
+        x+= m*g/k;
         return x;
     }
 
